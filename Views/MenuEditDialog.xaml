@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentDialog
+    x:Class="List.Views.MenuEditDialog"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:List.Views"
+    xmlns:models="using:List.Models"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    x:Uid="MenuEditDialog"
+    Style="{StaticResource DefaultContentDialogStyle}"
+    PrimaryButtonClick="OnPrimaryButtonClick">
+
+    <ScrollViewer Width="480" MaxHeight="560" VerticalScrollBarVisibility="Auto">
+        <StackPanel Spacing="16" Padding="0,0,12,0">
+
+            <!-- Error message -->
+            <InfoBar x:Name="errorBar"
+                     IsOpen="True"
+                     Severity="Error"
+                     Message="{x:Bind ViewModel.ErrorMessage, Mode=OneWay}"
+                     Visibility="{x:Bind ViewModel.HasError, Mode=OneWay}"/>
+
+            <!-- Name -->
+            <TextBox x:Uid="MenuEditDialog_Name"
+                     Text="{x:Bind ViewModel.Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+
+            <!-- Image -->
+            <StackPanel Spacing="8">
+                <Button x:Uid="MenuEditDialog_PickImage"
+                        Click="OnPickImageClick"/>
+                <Image Source="{x:Bind ViewModel.ImageRelativePath, Mode=OneWay, Converter={StaticResource ImageConverter}}"
+                       MaxHeight="160"
+                       Stretch="Uniform"
+                       HorizontalAlignment="Left"/>
+            </StackPanel>
+
+            <!-- Ingredients -->
+            <StackPanel Spacing="8">
+                <TextBlock x:Uid="MenuEditDialog_Ingredients"
+                           Style="{StaticResource BaseTextBlockStyle}"/>
+                <ListView ItemsSource="{x:Bind ViewModel.Ingredients}"
+                          SelectionMode="None"
+                          IsItemClickEnabled="False"
+                          VirtualizingStackPanel.VirtualizationMode="Standard">
+                    <ListView.ItemContainerTransitions>
+                        <TransitionCollection>
+                            <AddDeleteThemeTransition/>
+                        </TransitionCollection>
+                    </ListView.ItemContainerTransitions>
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="ListViewItem">
+                            <Setter Property="Margin" Value="0,4"/>
+                            <Setter Property="Padding" Value="0"/>
+                            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                        </Style>
+                    </ListView.ItemContainerStyle>
+                    <ListView.ItemTemplate>
+                        <DataTemplate x:DataType="models:Ingredient">
+                            <Grid ColumnSpacing="8">
+                                <Grid.Transitions>
+                                    <TransitionCollection>
+                                        <EntranceThemeTransition IsStaggeringEnabled="False"/>
+                                    </TransitionCollection>
+                                </Grid.Transitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="80"/>
+                                    <ColumnDefinition Width="80"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBox Grid.Column="0"
+                                         x:Uid="MenuEditDialog_IngredientName"
+                                         Text="{x:Bind Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                <TextBox Grid.Column="1"
+                                         x:Uid="MenuEditDialog_IngredientAmount"
+                                         Text="{x:Bind Amount, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                <TextBox Grid.Column="2"
+                                         x:Uid="MenuEditDialog_IngredientUnit"
+                                         Text="{x:Bind Unit, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                <Button Grid.Column="3"
+                                        VerticalAlignment="Bottom"
+                                        Click="OnRemoveIngredientClick"
+                                        CommandParameter="{x:Bind}">
+                                    <FontIcon Glyph="&#xE74D;"/>
+                                </Button>
+                            </Grid>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <AppBarButton x:Uid="MenuEditDialog_AddIngredient"
+                              Icon="Add"
+                              Command="{x:Bind ViewModel.AddIngredientCommand}"/>
+            </StackPanel>
+
+            <!-- Steps -->
+            <StackPanel Spacing="8">
+                <TextBlock x:Uid="MenuEditDialog_Steps"
+                           Style="{StaticResource BaseTextBlockStyle}"/>
+                <ListView ItemsSource="{x:Bind ViewModel.Steps}"
+                          SelectionMode="None"
+                          IsItemClickEnabled="False"
+                          VirtualizingStackPanel.VirtualizationMode="Standard">
+                    <ListView.ItemContainerTransitions>
+                        <TransitionCollection>
+                            <AddDeleteThemeTransition/>
+                        </TransitionCollection>
+                    </ListView.ItemContainerTransitions>
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="ListViewItem">
+                            <Setter Property="Margin" Value="0,4"/>
+                            <Setter Property="Padding" Value="0"/>
+                            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                        </Style>
+                    </ListView.ItemContainerStyle>
+                    <ListView.ItemTemplate>
+                        <DataTemplate x:DataType="models:RecipeStep">
+                            <Grid ColumnSpacing="8">
+                                <Grid.Transitions>
+                                    <TransitionCollection>
+                                        <EntranceThemeTransition IsStaggeringEnabled="False"/>
+                                    </TransitionCollection>
+                                </Grid.Transitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBox Grid.Column="0"
+                                         x:Uid="MenuEditDialog_StepText"
+                                         Text="{x:Bind Text, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                         AcceptsReturn="True"
+                                         TextWrapping="Wrap"/>
+                                <Button Grid.Column="1"
+                                        VerticalAlignment="Bottom"
+                                        Click="OnRemoveStepClick"
+                                        CommandParameter="{x:Bind}">
+                                    <FontIcon Glyph="&#xE74D;"/>
+                                </Button>
+                            </Grid>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <AppBarButton x:Uid="MenuEditDialog_AddStep"
+                              Icon="Add"
+                              Command="{x:Bind ViewModel.AddStepCommand}"/>
+            </StackPanel>
+
+            <!-- Tags -->
+            <TextBox x:Uid="MenuEditDialog_Tags"
+                     Text="{x:Bind ViewModel.TagsText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+
+            <!-- Cooking time -->
+            <NumberBox x:Uid="MenuEditDialog_CookingTime"
+                       Value="{x:Bind ViewModel.CookingTimeMinutes, Mode=TwoWay}"
+                       Minimum="0"
+                       SpinButtonPlacementMode="Compact"
+                       SmallChange="5"/>
+
+            <!-- Difficulty -->
+            <ComboBox x:Name="difficultyComboBox"
+                      x:Uid="MenuEditDialog_Difficulty"
+                      SelectionChanged="OnDifficultySelectionChanged"
+                      HorizontalAlignment="Stretch">
+                <ComboBoxItem x:Uid="MenuEditDialog_DifficultyEasy"/>
+                <ComboBoxItem x:Uid="MenuEditDialog_DifficultyMedium"/>
+                <ComboBoxItem x:Uid="MenuEditDialog_DifficultyHard"/>
+            </ComboBox>
+
+            <!-- Notes -->
+            <TextBox x:Uid="MenuEditDialog_Notes"
+                     Text="{x:Bind ViewModel.Notes, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                     AcceptsReturn="True"
+                     TextWrapping="Wrap"
+                     MinHeight="80"
+                     MaxHeight="160"/>
+
+        </StackPanel>
+    </ScrollViewer>
+</ContentDialog>

@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <data name="HomePage_Title.Text" xml:space="preserve">
+    <value>Menus</value>
+  </data>
+  <data name="HomePage_AddButton.Label" xml:space="preserve">
+    <value>New</value>
+  </data>
+  <data name="HomePage_EmptyState.Text" xml:space="preserve">
+    <value>No menus yet. Click "New" to add your first dish.</value>
+  </data>
+
+  <data name="MenuEditDialog.Title" xml:space="preserve">
+    <value>New Menu</value>
+  </data>
+  <data name="MenuEditDialog_EditTitle" xml:space="preserve">
+    <value>Edit Menu</value>
+  </data>
+  <data name="MenuDelete_Title" xml:space="preserve">
+    <value>Delete menu</value>
+  </data>
+  <data name="MenuDelete_Message" xml:space="preserve">
+    <value>Are you sure you want to delete "{0}"? This cannot be undone.</value>
+  </data>
+  <data name="MenuDelete_Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="MenuDelete_Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+
+  <data name="SettingsPage_Title.Text" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="SettingsPage_SectionAppearance.Text" xml:space="preserve">
+    <value>Appearance &amp; behavior</value>
+  </data>
+  <data name="SettingsPage_ThemeCard.Header" xml:space="preserve">
+    <value>App theme</value>
+  </data>
+  <data name="SettingsPage_ThemeCard.Description" xml:space="preserve">
+    <value>Select which app theme to display</value>
+  </data>
+  <data name="SettingsPage_ThemeLight.Content" xml:space="preserve">
+    <value>Light</value>
+  </data>
+  <data name="SettingsPage_ThemeDark.Content" xml:space="preserve">
+    <value>Dark</value>
+  </data>
+  <data name="SettingsPage_ThemeSystem.Content" xml:space="preserve">
+    <value>Use system setting</value>
+  </data>
+  <data name="SettingsPage_LanguageCard.Header" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="SettingsPage_LanguageCard.Description" xml:space="preserve">
+    <value>Select display language</value>
+  </data>
+  <data name="SettingsPage_RestartBar.Message" xml:space="preserve">
+    <value>Restart the app to apply the language change.</value>
+  </data>
+  <data name="MenuEditDialog.PrimaryButtonText" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="MenuEditDialog.SecondaryButtonText" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="MenuEditDialog_Name.Header" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="MenuEditDialog_PickImage.Content" xml:space="preserve">
+    <value>Pick image</value>
+  </data>
+  <data name="MenuEditDialog_Ingredients.Text" xml:space="preserve">
+    <value>Ingredients</value>
+  </data>
+  <data name="MenuEditDialog_IngredientName.Header" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="MenuEditDialog_IngredientAmount.Header" xml:space="preserve">
+    <value>Amount</value>
+  </data>
+  <data name="MenuEditDialog_IngredientUnit.Header" xml:space="preserve">
+    <value>Unit</value>
+  </data>
+  <data name="MenuEditDialog_AddIngredient.Label" xml:space="preserve">
+    <value>Add ingredient</value>
+  </data>
+  <data name="MenuEditDialog_Steps.Text" xml:space="preserve">
+    <value>Steps</value>
+  </data>
+  <data name="MenuEditDialog_StepText.Header" xml:space="preserve">
+    <value>Step</value>
+  </data>
+  <data name="MenuEditDialog_AddStep.Label" xml:space="preserve">
+    <value>Add step</value>
+  </data>
+  <data name="MenuEditDialog_Tags.Header" xml:space="preserve">
+    <value>Tags (comma separated)</value>
+  </data>
+  <data name="MenuEditDialog_CookingTime.Header" xml:space="preserve">
+    <value>Cooking time (minutes)</value>
+  </data>
+  <data name="MenuEditDialog_Difficulty.Header" xml:space="preserve">
+    <value>Difficulty</value>
+  </data>
+  <data name="MenuEditDialog_DifficultyEasy.Content" xml:space="preserve">
+    <value>Easy</value>
+  </data>
+  <data name="MenuEditDialog_DifficultyMedium.Content" xml:space="preserve">
+    <value>Medium</value>
+  </data>
+  <data name="MenuEditDialog_DifficultyHard.Content" xml:space="preserve">
+    <value>Hard</value>
+  </data>
+  <data name="MenuEditDialog_Notes.Header" xml:space="preserve">
+    <value>Notes</value>
+  </data>
+</root>

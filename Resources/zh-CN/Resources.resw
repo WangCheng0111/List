@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <data name="HomePage_Title.Text" xml:space="preserve">
+    <value>菜单</value>
+  </data>
+  <data name="HomePage_AddButton.Label" xml:space="preserve">
+    <value>新建</value>
+  </data>
+  <data name="HomePage_EmptyState.Text" xml:space="preserve">
+    <value>还没有菜单，点击“新建”添加第一道菜</value>
+  </data>
+
+  <data name="MenuEditDialog.Title" xml:space="preserve">
+    <value>新建菜单</value>
+  </data>
+  <data name="MenuEditDialog_EditTitle" xml:space="preserve">
+    <value>编辑菜单</value>
+  </data>
+  <data name="MenuDelete_Title" xml:space="preserve">
+    <value>删除菜单</value>
+  </data>
+  <data name="MenuDelete_Message" xml:space="preserve">
+    <value>确定要删除“{0}”吗？此操作不可撤销。</value>
+  </data>
+  <data name="MenuDelete_Delete" xml:space="preserve">
+    <value>删除</value>
+  </data>
+  <data name="MenuDelete_Cancel" xml:space="preserve">
+    <value>取消</value>
+  </data>
+
+  <data name="SettingsPage_Title.Text" xml:space="preserve">
+    <value>设置</value>
+  </data>
+  <data name="SettingsPage_SectionAppearance.Text" xml:space="preserve">
+    <value>外观与行为</value>
+  </data>
+  <data name="SettingsPage_ThemeCard.Header" xml:space="preserve">
+    <value>应用主题</value>
+  </data>
+  <data name="SettingsPage_ThemeCard.Description" xml:space="preserve">
+    <value>选择要显示的应用主题</value>
+  </data>
+  <data name="SettingsPage_ThemeLight.Content" xml:space="preserve">
+    <value>浅色</value>
+  </data>
+  <data name="SettingsPage_ThemeDark.Content" xml:space="preserve">
+    <value>深色</value>
+  </data>
+  <data name="SettingsPage_ThemeSystem.Content" xml:space="preserve">
+    <value>使用系统设置</value>
+  </data>
+  <data name="SettingsPage_LanguageCard.Header" xml:space="preserve">
+    <value>语言</value>
+  </data>
+  <data name="SettingsPage_LanguageCard.Description" xml:space="preserve">
+    <value>选择显示语言</value>
+  </data>
+  <data name="SettingsPage_RestartBar.Message" xml:space="preserve">
+    <value>重启应用以使语言更改生效。</value>
+  </data>
+  <data name="MenuEditDialog.PrimaryButtonText" xml:space="preserve">
+    <value>保存</value>
+  </data>
+  <data name="MenuEditDialog.SecondaryButtonText" xml:space="preserve">
+    <value>取消</value>
+  </data>
+  <data name="MenuEditDialog_Name.Header" xml:space="preserve">
+    <value>菜名</value>
+  </data>
+  <data name="MenuEditDialog_PickImage.Content" xml:space="preserve">
+    <value>选择图片</value>
+  </data>
+  <data name="MenuEditDialog_Ingredients.Text" xml:space="preserve">
+    <value>配料</value>
+  </data>
+  <data name="MenuEditDialog_IngredientName.Header" xml:space="preserve">
+    <value>名称</value>
+  </data>
+  <data name="MenuEditDialog_IngredientAmount.Header" xml:space="preserve">
+    <value>数量</value>
+  </data>
+  <data name="MenuEditDialog_IngredientUnit.Header" xml:space="preserve">
+    <value>单位</value>
+  </data>
+  <data name="MenuEditDialog_AddIngredient.Label" xml:space="preserve">
+    <value>添加配料</value>
+  </data>
+  <data name="MenuEditDialog_Steps.Text" xml:space="preserve">
+    <value>烹饪步骤</value>
+  </data>
+  <data name="MenuEditDialog_StepText.Header" xml:space="preserve">
+    <value>步骤</value>
+  </data>
+  <data name="MenuEditDialog_AddStep.Label" xml:space="preserve">
+    <value>添加步骤</value>
+  </data>
+  <data name="MenuEditDialog_Tags.Header" xml:space="preserve">
+    <value>标签（逗号分隔）</value>
+  </data>
+  <data name="MenuEditDialog_CookingTime.Header" xml:space="preserve">
+    <value>烹饪时间（分钟）</value>
+  </data>
+  <data name="MenuEditDialog_Difficulty.Header" xml:space="preserve">
+    <value>难度</value>
+  </data>
+  <data name="MenuEditDialog_DifficultyEasy.Content" xml:space="preserve">
+    <value>简单</value>
+  </data>
+  <data name="MenuEditDialog_DifficultyMedium.Content" xml:space="preserve">
+    <value>中等</value>
+  </data>
+  <data name="MenuEditDialog_DifficultyHard.Content" xml:space="preserve">
+    <value>困难</value>
+  </data>
+  <data name="MenuEditDialog_Notes.Header" xml:space="preserve">
+    <value>备注</value>
+  </data>
+</root>
