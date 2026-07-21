@@ -25,7 +25,7 @@ namespace List
 
             ExtendsContentIntoTitleBar = true;
             SetTitleBar(AppTitleBar);
-            AppWindow.TitleBar.PreferredHeightOption = TitleBarHeightOption.Collapsed;
+            AppWindow.TitleBar.PreferredHeightOption = TitleBarHeightOption.Tall;
             MoveAndCenterWindowOnScreen(new SizeInt32(1600, 900));
 
             ApplyTheme(_themeService.CurrentTheme);
@@ -38,6 +38,31 @@ namespace List
         private void ApplyTheme(ElementTheme theme)
         {
             rootGrid.RequestedTheme = theme;
+
+            // 同步标题栏按钮颜色以匹配主题
+            var titleBar = AppWindow.TitleBar;
+            if (theme == ElementTheme.Dark)
+            {
+                titleBar.ButtonForegroundColor = Windows.UI.Color.FromArgb(255, 255, 255, 255);
+                titleBar.ButtonBackgroundColor = Windows.UI.Color.FromArgb(0, 0, 0, 0);
+                titleBar.ButtonHoverForegroundColor = Windows.UI.Color.FromArgb(255, 255, 255, 255);
+                titleBar.ButtonHoverBackgroundColor = Windows.UI.Color.FromArgb(20, 255, 255, 255);
+                titleBar.ButtonPressedForegroundColor = Windows.UI.Color.FromArgb(255, 255, 255, 255);
+                titleBar.ButtonPressedBackgroundColor = Windows.UI.Color.FromArgb(40, 255, 255, 255);
+                titleBar.ButtonInactiveForegroundColor = Windows.UI.Color.FromArgb(120, 255, 255, 255);
+                titleBar.ButtonInactiveBackgroundColor = Windows.UI.Color.FromArgb(0, 0, 0, 0);
+            }
+            else
+            {
+                titleBar.ButtonForegroundColor = Windows.UI.Color.FromArgb(255, 0, 0, 0);
+                titleBar.ButtonBackgroundColor = Windows.UI.Color.FromArgb(0, 0, 0, 0);
+                titleBar.ButtonHoverForegroundColor = Windows.UI.Color.FromArgb(255, 0, 0, 0);
+                titleBar.ButtonHoverBackgroundColor = Windows.UI.Color.FromArgb(20, 0, 0, 0);
+                titleBar.ButtonPressedForegroundColor = Windows.UI.Color.FromArgb(255, 0, 0, 0);
+                titleBar.ButtonPressedBackgroundColor = Windows.UI.Color.FromArgb(40, 0, 0, 0);
+                titleBar.ButtonInactiveForegroundColor = Windows.UI.Color.FromArgb(120, 0, 0, 0);
+                titleBar.ButtonInactiveBackgroundColor = Windows.UI.Color.FromArgb(0, 0, 0, 0);
+            }
         }
 
         private void NavView_SelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)

@@ -16,7 +16,7 @@
     <Grid x:Name="rootGrid">
         <Grid.RowDefinitions>
             <!-- Title Bar -->
-            <RowDefinition Height="Auto" />
+            <RowDefinition Height="46" />
             <!-- App Content -->
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
