@@ -89,11 +89,11 @@
   <data name="MenuEditDialog_Steps.Text" xml:space="preserve">
     <value>烹饪步骤</value>
   </data>
-  <data name="MenuEditDialog_StepText.Header" xml:space="preserve">
-    <value>步骤</value>
-  </data>
   <data name="MenuEditDialog_AddStep.Label" xml:space="preserve">
     <value>添加步骤</value>
+  </data>
+  <data name="Step_HeaderFormat" xml:space="preserve">
+    <value>步骤{0}</value>
   </data>
   <data name="MenuEditDialog_Tags.Header" xml:space="preserve">
     <value>标签（逗号分隔）</value>

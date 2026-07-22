@@ -87,6 +87,7 @@ namespace List.ViewModels
                 Ingredients.Add(new Ingredient { Name = ing.Name, Amount = ing.Amount, Unit = ing.Unit });
             foreach (var step in item.Steps)
                 Steps.Add(new RecipeStep { Text = step.Text });
+            RenumberSteps();
             ErrorMessage = string.Empty;
         }
 
@@ -149,6 +150,12 @@ namespace List.ViewModels
             return true;
         }
 
+        private void RenumberSteps()
+        {
+            for (int i = 0; i < Steps.Count; i++)
+                Steps[i].Index = i + 1;
+        }
+
         [RelayCommand]
         private void AddIngredient() => Ingredients.Add(new Ingredient());
 
@@ -160,13 +167,20 @@ namespace List.ViewModels
         }
 
         [RelayCommand]
-        private void AddStep() => Steps.Add(new RecipeStep());
+        private void AddStep()
+        {
+            Steps.Add(new RecipeStep());
+            RenumberSteps();
+        }
 
         [RelayCommand]
         private void RemoveStep(RecipeStep? step)
         {
             if (step is not null)
+            {
                 Steps.Remove(step);
+                RenumberSteps();
+            }
         }
     }
 }

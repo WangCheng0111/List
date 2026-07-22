@@ -3,6 +3,8 @@ using List.Models;
 using List.ViewModels;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
+using Microsoft.UI.Xaml.Media;
+using Microsoft.UI.Xaml.Media.Animation;
 using Windows.ApplicationModel.Resources;
 using Windows.Storage;
 using Windows.Storage.Pickers;
@@ -51,14 +53,67 @@ namespace List.Views
 
         private void OnRemoveIngredientClick(object sender, RoutedEventArgs e)
         {
-            if (sender is Button btn && btn.CommandParameter is Ingredient ing)
+            if (sender is not Button btn || btn.CommandParameter is not Ingredient ing)
+                return;
+
+            var grid = FindParentGrid(btn);
+            if (grid is not null)
+            {
+                FadeOutAndExecute(grid, () => ViewModel.RemoveIngredientCommand.Execute(ing));
+            }
+            else
+            {
                 ViewModel.RemoveIngredientCommand.Execute(ing);
+            }
         }
 
         private void OnRemoveStepClick(object sender, RoutedEventArgs e)
         {
-            if (sender is Button btn && btn.CommandParameter is RecipeStep step)
+            if (sender is not Button btn || btn.CommandParameter is not RecipeStep step)
+                return;
+
+            var grid = FindParentGrid(btn);
+            if (grid is not null)
+            {
+                FadeOutAndExecute(grid, () => ViewModel.RemoveStepCommand.Execute(step));
+            }
+            else
+            {
                 ViewModel.RemoveStepCommand.Execute(step);
+            }
+        }
+
+        private static Grid? FindParentGrid(DependencyObject child)
+        {
+            var parent = VisualTreeHelper.GetParent(child);
+            while (parent is not null)
+            {
+                if (parent is Grid grid && grid.ColumnDefinitions.Count > 0)
+                    return grid;
+                parent = VisualTreeHelper.GetParent(parent);
+            }
+            return null;
+        }
+
+        private static void FadeOutAndExecute(UIElement target, Action onComplete)
+        {
+            var storyboard = new Storyboard();
+            var fadeAnim = new DoubleAnimation
+            {
+                To = 0,
+                Duration = new Duration(TimeSpan.FromMilliseconds(250)),
+                EasingFunction = new QuadraticEase { EasingMode = EasingMode.EaseOut }
+            };
+            Storyboard.SetTarget(fadeAnim, target);
+            Storyboard.SetTargetProperty(fadeAnim, "Opacity");
+            storyboard.Children.Add(fadeAnim);
+
+            storyboard.Completed += (s, a) =>
+            {
+                target.Opacity = 1;
+                onComplete();
+            };
+            storyboard.Begin();
         }
 
         private async void OnPickImageClick(object sender, RoutedEventArgs e)

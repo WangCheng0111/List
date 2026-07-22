@@ -45,9 +45,7 @@
                           IsItemClickEnabled="False"
                           VirtualizingStackPanel.VirtualizationMode="Standard">
                     <ListView.ItemContainerTransitions>
-                        <TransitionCollection>
-                            <AddDeleteThemeTransition/>
-                        </TransitionCollection>
+                        <TransitionCollection/>
                     </ListView.ItemContainerTransitions>
                     <ListView.ItemContainerStyle>
                         <Style TargetType="ListViewItem">
@@ -60,13 +58,13 @@
                         <DataTemplate x:DataType="models:Ingredient">
                             <Grid ColumnSpacing="8">
                                 <Grid.Transitions>
-                                    <TransitionCollection>
-                                        <EntranceThemeTransition IsStaggeringEnabled="False"/>
-                                    </TransitionCollection>
-                                </Grid.Transitions>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*"/>
-                                    <ColumnDefinition Width="80"/>
+                                     <TransitionCollection>
+                                            <EntranceThemeTransition IsStaggeringEnabled="False"/>
+                                        </TransitionCollection>
+                                    </Grid.Transitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="80"/>
                                     <ColumnDefinition Width="80"/>
                                     <ColumnDefinition Width="Auto"/>
                                 </Grid.ColumnDefinitions>
@@ -103,9 +101,7 @@
                           IsItemClickEnabled="False"
                           VirtualizingStackPanel.VirtualizationMode="Standard">
                     <ListView.ItemContainerTransitions>
-                        <TransitionCollection>
-                            <AddDeleteThemeTransition/>
-                        </TransitionCollection>
+                        <TransitionCollection/>
                     </ListView.ItemContainerTransitions>
                     <ListView.ItemContainerStyle>
                         <Style TargetType="ListViewItem">
@@ -118,16 +114,16 @@
                         <DataTemplate x:DataType="models:RecipeStep">
                             <Grid ColumnSpacing="8">
                                 <Grid.Transitions>
-                                    <TransitionCollection>
-                                        <EntranceThemeTransition IsStaggeringEnabled="False"/>
-                                    </TransitionCollection>
-                                </Grid.Transitions>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*"/>
-                                    <ColumnDefinition Width="Auto"/>
+                                     <TransitionCollection>
+                                            <EntranceThemeTransition IsStaggeringEnabled="False"/>
+                                        </TransitionCollection>
+                                    </Grid.Transitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
                                 </Grid.ColumnDefinitions>
                                 <TextBox Grid.Column="0"
-                                         x:Uid="MenuEditDialog_StepText"
+                                         Header="{x:Bind Index, Mode=OneWay, Converter={StaticResource StepHeaderConverter}}"
                                          Text="{x:Bind Text, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                          AcceptsReturn="True"
                                          TextWrapping="Wrap"/>

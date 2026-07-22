@@ -15,6 +15,7 @@
             <conv:DifficultyToStringConverter x:Key="DifficultyConverter"/>
             <conv:DifficultyToBrushConverter x:Key="DifficultyBrushConverter"/>
             <conv:CookingTimeToStringConverter x:Key="CookingTimeConverter"/>
+            <conv:StepIndexToHeaderConverter x:Key="StepHeaderConverter"/>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

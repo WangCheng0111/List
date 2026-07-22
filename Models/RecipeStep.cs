@@ -6,5 +6,8 @@ namespace List.Models
     {
         [ObservableProperty]
         public partial string Text { get; set; } = string.Empty;
+
+        [ObservableProperty]
+        public partial int Index { get; set; } = 1;
     }
 }
