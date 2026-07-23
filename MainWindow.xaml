@@ -36,7 +36,7 @@
                         IsSettingsVisible="True"
                         SelectionChanged="NavView_SelectionChanged">
             <NavigationView.MenuItems>
-                <NavigationViewItem Tag="Home" Icon="Home" Content="主页"/>
+                <NavigationViewItem x:Uid="Sidebar_Home" Tag="Home" Icon="Home"/>
             </NavigationView.MenuItems>
             <Frame x:Name="contentFrame"/>
         </NavigationView>

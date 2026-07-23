@@ -3,6 +3,9 @@
   <data name="HomePage_Title.Text" xml:space="preserve">
     <value>菜单</value>
   </data>
+  <data name="Sidebar_Home.Content" xml:space="preserve">
+    <value>主页</value>
+  </data>
   <data name="HomePage_AddButton.Label" xml:space="preserve">
     <value>新建</value>
   </data>
