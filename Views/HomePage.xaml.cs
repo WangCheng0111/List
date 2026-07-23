@@ -32,6 +32,7 @@ namespace List.Views
             var dialog = new MenuEditDialog();
             dialog.Initialize(null);
             dialog.XamlRoot = this.XamlRoot;
+            dialog.RequestedTheme = this.ActualTheme;
             await dialog.ShowAsync();
 
             if (dialog.Result is not null)
@@ -49,6 +50,7 @@ namespace List.Views
             var dialog = new MenuEditDialog();
             dialog.Initialize(item);
             dialog.XamlRoot = this.XamlRoot;
+            dialog.RequestedTheme = this.ActualTheme;
             await dialog.ShowAsync();
 
             if (dialog.Result is not null)
@@ -68,6 +70,7 @@ namespace List.Views
             var dialog = new ContentDialog
             {
                 XamlRoot = this.XamlRoot,
+                RequestedTheme = this.ActualTheme,
                 Title = Res.GetString("MenuDelete_Title"),
                 Content = string.Format(Res.GetString("MenuDelete_Message"), item.Name),
                 PrimaryButtonText = Res.GetString("MenuDelete_Delete"),
